@@ -1,28 +1,9 @@
-== README
+== Fias Locations
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Available database adapters:
 
-Things you may want to cover:
+* SQLite3
 
-* Ruby version
+* PostgreSQL
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+For importing all disctrics for region need run next task: <tt>rake fias_locations:import_dictricts_for_region [FIAS_PATH=tmp/fias REGION_CODE=61]</tt>
