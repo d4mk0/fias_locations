@@ -5,6 +5,7 @@ class Location < ActiveRecord::Base
 
   enum location_type: [:region, :district, :city, :admin_area, :non_admin_area, :street, :address, :landmark]
 
+  before_save :set_translit
 
   # recursively collect all parent location nodes and return them in array
   def self.parent_locations(l, memo = [])
@@ -19,5 +20,11 @@ class Location < ActiveRecord::Base
   def parent?
     location_type == 'region'
   end
+
+  private
+
+    def set_translit
+      self.translit = Translit.convert self.title, :english
+    end
 
 end

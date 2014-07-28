@@ -39,4 +39,4 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'fias'#, git: 'https://github.com/evilmartians/kladr.git'
-
+gem 'translit'
