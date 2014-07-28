@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140727121717) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "locations", force: true do |t|
     t.string   "title"
     t.string   "translit"
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 20140727121717) do
     t.datetime "updated_at"
   end
 
-  add_index "locations", ["location_id"], name: "index_locations_on_location_id"
-  add_index "locations", ["location_type"], name: "index_locations_on_location_type"
+  add_index "locations", ["location_id"], name: "index_locations_on_location_id", using: :btree
+  add_index "locations", ["location_type"], name: "index_locations_on_location_type", using: :btree
 
 end
